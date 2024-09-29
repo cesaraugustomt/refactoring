@@ -96,3 +96,4 @@ Não é suficiente apenas saber sobre o clean code; é preciso praticá-lo regul
 # Pilares
 
 - Primeiro pilar: Variáveis Limpas
+- Segundo pilar: Funções Limpas

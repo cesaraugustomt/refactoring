@@ -20,7 +20,6 @@ function CalculateTax(nomeDaNota, documentNumber,value,customer,date){
     nota.value = value;
 
     let result5 = nota.value - result4;
-
     nota.value = result5 - result - result2 - result3;
     nota.value = nota.value - 3.50;
     nota.value = nota.value - (nota.value * 0.3);
@@ -28,33 +27,39 @@ function CalculateTax(nomeDaNota, documentNumber,value,customer,date){
 }
 
 // Com refatoração
-function CalculateTax(invoiceName, document,value,customer,date){
 
-    const platformFixedTax = 3.50;
-    const discountPercentage = 0.3;
+function CalculateTax(purchase){
+    let invoice = {...purchase};
 
+    invoice.value = GetLiquidValue(invoice);
+    invoice.value = GetTaxDeductedValue(invoice);
+    invoice.value = GetValueDeductedByPlatformTaxes(invoice);
+    invoice.value = GetValueDeductedByDiscount(invoice);
+    return invoice;
+}
+
+function GetLiquidValue({value}){
     const retailerId = "5678";
     const platformId = "4567";
 
-    let invoice = {
-        name: invoiceName,
-        date: date,
-        number: document,
-        value: 0,
-        customer: customer
-    }
+    let  = GetSharedTax(retailerId, platformId);
+    return value - sharedTax;
+}
 
-    let generalTax = GetTaxValueById(document);
-    let cityTax = GetTaxaMunicipalById7(document);
-    let companyTax = GetTaxaDaCompany(document);
-    let sharedTax = GetSharedTax(retailerId, platformId);
-    let liquidValue = invoice.value - sharedTax;
+function GetTaxDeductedValue({value, document}){
+let generalTax = GetTaxValueById(document);
+let cityTax = GetTaxaMunicipalById7(document);
+let companyTax = GetTaxaDaCompany(document);
 
-    
-    invoice.value = value;
+return value - generalTax - cityTax - companyTax;
+}
 
-    invoice.value = liquidValue - generalTax - cityTax - companyTax;
-    invoice.value = invoice.value - platformFixedTax;
-    invoice.value = invoice.value - (invoice.value * discountPercentage);
-    return invoice;
+function GetValueDeductedByPlatformTaxes({value}){
+    const platformFixedTax = 3.50;
+    return value - platformFixedTax;
+}
+
+function GetValueDeductedByDiscount({value}){
+    const discountPercentage = 0.3;
+    return value - (value * discountPercentage);
 }
