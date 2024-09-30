@@ -9,9 +9,9 @@ Hoje em dia não é muito aceitavel sair usando promisse o ideal é usar
 
 No react nem sempre tem a opção de usar **async/await**.
 
-![alt text](../imagens/promissehell.png)
+![alt text](../../imagens/promissehell.png)
 
 
 Usando **async/await**:
 
-![alt text](../imagens/await.png)
+![alt text](../../imagens/await.png)
