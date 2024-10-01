@@ -27,7 +27,6 @@ function CalculateTax(nomeDaNota, documentNumber,value,customer,date){
 }
 
 // Com refatoração
-
 function CalculateTax(purchase){
     let invoice = {...purchase};
 
