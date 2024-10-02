@@ -97,3 +97,10 @@ Não é suficiente apenas saber sobre o clean code; é preciso praticá-lo regul
 
 - Primeiro pilar: Variáveis Limpas
 - Segundo pilar: Funções Limpas
+
+# DRY
+
+O conceito DRY (do inglês, "Don't Repeat Yourself") é um princípio fundamental na programação que enfatiza a importância de evitar a repetição de código.
+
+# KISS
+O conceito KISS, ou "Keep It Simple, Stupid", é um princípio popular em muitos campos, incluindo a programação. O conceito é baseado na ideia de que, em geral, as soluções simples são as melhores. É melhor manter as coisas simples do que complicá-las desnecessariamente.
