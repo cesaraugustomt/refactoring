@@ -1,0 +1,12 @@
+# EditorConfig is awesome: https://EditorConfig.org
+
+# top-most EditorConfig file
+root = true #está na raiz do projeto
+
+[*] #as opções vão ser utilizadas em todos os arquivos
+indent_style = space #tipo de identação
+indent_size = 2 #quantidade de espaço
+end_of_line = lf #fim da linha 
+charset = utf-8
+trim_trailing_whitespace = false
+insert_final_newline = false
